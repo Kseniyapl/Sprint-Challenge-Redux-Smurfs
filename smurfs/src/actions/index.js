@@ -38,7 +38,7 @@ export const getSmurf = () => dispatch => {
         .catch(error => dispatch ({type: GET_SMURFS_FAILURE, payload: error}));
       };
 //POST
-export const addSmurf = smurf => dispatch => {
+export const addSmurf = (smurf) => dispatch => {
   dispatch({ type: ADD_SMURFS_FTCHING });
     axios
       .post('http://localhost:3333/smurfs', smurf)

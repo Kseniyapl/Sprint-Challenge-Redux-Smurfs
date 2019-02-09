@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { addSmurf } from '../actions'
+
+import { connect } from 'react-redux';
 
 
 class SmurfForm extends Component {
@@ -12,19 +14,22 @@ class SmurfForm extends Component {
     };
   }
 
-  addSmurf = event => {
+  handleSubmit = event => {
     event.preventDefault();
+    this.props.addSmurf(this.state);
+    this.setState({ name:"", age:"", height:"" })
     
-  }
+}
 
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+    
   };
 
   render() {
     return (
       <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
+        <form onSubmit={this.handleSubmit}>
           <input
             onChange={this.handleInputChange}
             placeholder="name"
@@ -51,4 +56,5 @@ class SmurfForm extends Component {
   }
 }
 
-export default SmurfForm;
+
+export default connect(null, {addSmurf})(SmurfForm) 
