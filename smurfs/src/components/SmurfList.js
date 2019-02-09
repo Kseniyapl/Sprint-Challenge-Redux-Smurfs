@@ -31,7 +31,7 @@ class Smurfs extends Component {
   }
 }
 
-const mapStateToPops = state => {
+const mapStateToPops(state){
   console.log(state);
   return {
     smurfs: state.smurfs,
