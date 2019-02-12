@@ -61,7 +61,7 @@ const rootReducer = (state = initialState, action) => {
         error: action.payload
       };
       //POST
-      // ADD_SMURFS_FTCHING, 
+      // ADD_SMURFS_FETCHING, 
       // ADD_SMURFS_SUCCESS, 
       // ADD_SMURFS_FAILURE
 
